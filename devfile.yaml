@@ -36,7 +36,7 @@ commands:
       label: "Build Image"
       component: tools
       workingDir: ${PROJECT_SOURCE}
-      commandLine: "podman build -f src/main/docker/Dockerfile.jvm -t docker.io/quarkus/quarkus-api-example ."
+      commandLine: "podman build -f src/main/docker/Dockerfile.jvm -t sarvangeeks/quarkus-api-example ."
       group:
         kind: build
   - id: loginlocalregistry
