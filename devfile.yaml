@@ -47,3 +47,11 @@ commands:
       commandLine: "podman push sarvangeeks/quarkus-api-example"
       group:
         kind: build
+  - id: oc-deploy
+    exec:
+      label: "oc-deploy"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: "oc apply -f app.yaml"
+      group:
+        kind: run 
