@@ -53,3 +53,23 @@ spec:
               protocol: TCP
       imagePullSecrets:
           - name: sarvandockerhub
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: quarkus-api-example
+  namespace: muthuvaidy-dev
+  labels:
+    app.kubernetes.io/name: quarkus-api-example
+    app.kubernetes.io/version: 1.0.0-SNAPSHOT
+spec:
+  host: quarkus-api-example-muthuvaidy-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com
+  path: /
+  to:
+    kind: Service
+    name: quarkus-api-example
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None
+
